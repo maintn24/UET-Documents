@@ -1,0 +1,104 @@
+câu 4:
+#include <bits/stdc++.h>
+using namespace std;
+
+struct numRange {
+    int index;
+    int left, right;
+};
+
+int findNearbyRange(int n, int index, numRange list[]) {
+    int min = INT_MAX, indexToFind = -1;
+    for (int i = 0; i < n; i++) {
+        if (i != index && list[i].left >= list[index].right && list[i].left < min) {
+            indexToFind = list[i].index;
+            min = list[i].left;
+        }
+    }
+
+    return indexToFind;
+}
+
+int main() {
+    int n; cin >> n;
+    numRange list[n];
+    for (int i = 0; i < n; i++) {
+        cin >> list[i].left >> list[i].right;
+        list[i].index = i;
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << findNearbyRange(n, i, list) << " ";
+    }
+    
+    return 0;
+}
+
+câu 3:
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int sum(int n){
+    int ans = 0;
+    while(n != 0){
+        ans += pow(n%10,2);
+        n /= 10;
+    }
+    return ans;
+}
+
+bool isSoVuiVe(int n){
+    int check = sum(n);
+    if (check < 10 && check == 1) {
+        return true;
+    }
+    if (check < 10 && check != 1) {
+        return false;
+    }
+    return isSoVuiVe(check);
+}
+
+int main(){
+    int n; cin >> n;
+    int a[n];
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+        if (isSoVuiVe(a[i])) cout << "yes" << endl;
+        else cout << "no" << endl;
+    }
+}
+
+câu 2:
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main(){
+    int n; cin >> n;
+    map<string, int> m;
+    string s;
+    while(n--){
+        cin >> s;
+        m[s]++;
+        if(m[s] == 1) cout << "no"<< endl;
+        else cout << "yes" << endl;
+    }
+    return 0;
+}
+
+
+câu 1:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n; cin >> n;
+    map<int, int> m;
+    int x;
+    while(n--){
+        cin >> x;
+        m[x]++;
+        cout << m[x] << endl;
+    }
+}

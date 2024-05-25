@@ -1,0 +1,83 @@
+câu 1:
+Node* addLastNode(Node *head, int value)
+{
+    Node* newNode = new Node;
+    newNode->value = value;
+    newNode->nextNode = NULL;
+    
+    if(head == NULL){
+        return newNode;
+    }
+    Node* tmp = head;
+    while(tmp ->nextNode != NULL){
+        tmp = tmp->nextNode;
+    }
+    tmp->nextNode = newNode;
+    return head;
+}
+
+câu 2:
+Node* addNode(Node* head, int index, int value){
+    Node* newNode = new Node;
+    newNode->value = value;
+    newNode->nextNode = NULL;
+    
+    Node* tmp = head;
+    if(index == 0){
+        newNode->nextNode = head;
+        return newNode;
+    }
+    for(int i = 0; i < index-1; i++){
+        tmp = tmp->nextNode;
+    }
+    newNode->nextNode = tmp->nextNode;
+    tmp->nextNode = newNode;
+    return head;
+}
+
+Node* deleteNode(Node* head, int index){
+    if(index == 0){
+        head = head->nextNode;
+        return head;
+    }
+    
+    Node* tmp = head;
+    while(index-1 != 0){
+        tmp = tmp->nextNode;
+        index--;
+    }
+    tmp->nextNode = tmp->nextNode->nextNode;
+    return head;
+}
+
+câu 3:
+int getSize(Node *head)
+{
+    int cnt = 0;
+    while(head != NULL){
+        head = head->nextNode;
+        cnt++;
+    }
+    return cnt;
+}
+
+câu 4:
+int getElement(Node *head, int index){
+   Node* tmp = head;
+   while(index != 0){
+       tmp = tmp->nextNode;
+       index--;
+   }
+   return tmp->value;
+}
+
+câu 5:
+int getSum(Node *head)
+{
+    int sum = 0;
+    while (head != NULL){
+        sum += head->value;
+        head = head->nextNode;
+    }
+    return sum;
+}
