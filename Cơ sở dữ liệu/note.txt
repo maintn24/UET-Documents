@@ -1,0 +1,9 @@
+---------------------------11/9/23
+Có 9 BT chính: đến BT5 ktr GK
+		BT10 ktr CK
+Có điểm danh
+Không nghỉ quá 2 buổi
+Điểm lý thuyêt và thực hành khác nhau
+Thi GK CK của thực hành riêng
+Trước mỗi buổi học cần đọc trước
+Thực hành sẽ dùng chung 1 database, phải load lại trước mỗi buổi, trước khi thi.

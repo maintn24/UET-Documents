@@ -1,0 +1,21 @@
+CREATE DATABASE [database_name]
+USE [database_name]
+DROP DATABASE [database_name]
+
+CREATE TABLE [table_name]
+
+SELECT * FROM  
+WHERE
+DISTINCT
+LIMIT
+
+IN
+BETWEEN
+UNION
+LIKE ' '
+ORDER BY DESC/...
+
+SUBSTRING
+CONCAT
+REPLACE
+DATEDIFF
